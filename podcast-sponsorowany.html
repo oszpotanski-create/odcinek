@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Sponsorowany - W Ogniu Pytań 2026</title>
+    <meta name="description" content="Zostań gościem w podcaście W Ogniu Pytań. Buduj autorytet, zdobywaj klientów i twórz content, który pracuje na Ciebie przez lata.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF6B35;
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --text-light: #f5f5f5;
+            --text-gray: #b0b0b0;
+            --accent-red: #e63946;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--darker-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+            padding: 60px 0 80px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-orange);
+        }
+
+        .emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-orange);
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Co to jest */
+        .definition-box {
+            background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-orange);
+            margin-bottom: 40px;
+        }
+
+        .definition-box h3 {
+            color: var(--primary-orange);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .definition-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid var(--primary-orange);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .benefit-card h3 {
+            color: var(--primary-orange);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-orange);
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Package Cards */
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .package-card {
+            background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .package-card:hover {
+            border-color: var(--primary-orange);
+            transform: scale(1.05);
+        }
+
+        .package-card.featured {
+            border: 3px solid var(--primary-orange);
+            background: linear-gradient(135deg, #3a2a1a, #2a1f1a);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--primary-orange);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .package-name {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-orange);
+        }
+
+        .package-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .package-price span {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        .original-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .package-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            display: flex;
+            align-items: start;
+        }
+
+        .package-features li:before {
+            content: "✓";
+            color: var(--primary-orange);
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-red));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-orange);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .step-number {
+            background: var(--primary-orange);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: var(--primary-orange);
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-left: 5px solid var(--primary-orange);
+        }
+
+        .faq-question {
+            font-size: 1.3rem;
+            color: var(--primary-orange);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Special Offer Box */
+        .special-offer {
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-red));
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .special-offer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .special-offer p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .special-offer .cta-button {
+            background: white;
+            color: var(--primary-orange);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid var(--primary-orange);
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .packages {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                flex-direction: column;
+            }
+        }
+
+        /* Emphasis boxes */
+        .emphasis-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(230, 57, 70, 0.2));
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-orange);
+            margin: 40px 0;
+        }
+
+        .emphasis-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .emphasis-box strong {
+            color: var(--primary-orange);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="emoji">🎙️</div>
+            <h1>PODCAST SPONSOROWANY</h1>
+            <p class="subtitle">Zostań gościem w "W Ogniu Pytań"</p>
+            <p class="lead">
+                Buduj autorytet przez rozmowę. Zdobywaj klientów przez wartościowy content. 
+                Twórz materiał, który pracuje na Ciebie przez lata, nie tygodnie.
+            </p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="definition-box">
+                <h3>💡 Co to jest podcast sponsorowany?</h3>
+                <p>
+                    To <strong>profesjonalnie wyprodukowany odcinek</strong> mojego podcastu "W ogniu pytań", w którym <strong>Ty jesteś głównym gościem</strong>. 
+                    Dzielisz się swoją wiedzą, doświadczeniami i ofertą – w naturalny sposób, bez agresywnej reklamy.
+                </p>
+                <p style="margin-top: 20px;">
+                    Po publikacji kieruję do tego odcinka <strong>reklamy Google Ads</strong>, targetując osoby zainteresowane Twoją branżą.
+                    To nie jest zwykły sponsoring - <strong>to Twój odcinek</strong>, w którym budujesz pozycję eksperta.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--dark-bg);">
+        <div class="container">
+            <h2 class="section-title">📊 Nasza Społeczność (2025)</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">381 tys.</span>
+                    <span class="stat-label">wyświetleń na YouTube</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">5,8 mln</span>
+                    <span class="stat-label">wyświetleń na TikTok</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">6,7 tys.</span>
+                    <span class="stat-label">obserwujących na Facebook</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">80+</span>
+                    <span class="stat-label">opublikowanych odcinków</span>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-gray); font-size: 1.2rem;">
+                🌍 <strong>Polska + Holandia</strong> – Zaangażowana społeczność Polaków w Holandii i nie tylko!
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">🚀 Dlaczego to działa lepiej niż tradycyjna reklama?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="number">1</div>
+                    <h3>Budowanie zaufania przez rozmowę</h3>
+                    <p>
+                        Ludzie nie chcą reklam – chcą poznać prawdziwą osobę. 60-90 minut rozmowy pokazuje kim jesteś, 
+                        jak myślisz, jak rozwiązujesz problemy. To buduje zaufanie, którego nie da się osiągnąć standardową reklamą.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="number">2</div>
+                    <h3>Pozycjonowanie jako ekspert</h3>
+                    <p>
+                        Zostałeś zaproszony do podcastu = jesteś ekspertem. To automatycznie podnosi Twoją 
+                        wiarygodność w oczach potencjalnych klientów. Nie musisz się sam chwalić – rozmowa to robi za Ciebie.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="number">3</div>
+                    <h3>Content, który pracuje na Ciebie</h3>
+                    <p>
+                        Podcast zostaje w internecie na lata. Ludzie będą go znajdować przez Google, YouTube, 
+                        Spotify – długo po zakończeniu kampanii reklamowej. To inwestycja, nie wydatek.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="number">4</div>
+                    <h3>Gotowy content do Twoich social mediów</h3>
+                    <p>
+                        Dostajesz profesjonalnie zmontowane rolki (5-10 x 60 sek.) gotowe do publikacji 
+                        na LinkedIn, Instagram, Facebook, TikTok. Pełny odcinek publikuję na moim kanale YouTube, 
+                        gdzie dociera do tysięcy osób szukających wiedzy z Twojej branży.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="number">5</div>
+                    <h3>Targetowany zasięg</h3>
+                    <p>
+                        Zwykły odcinek: 200-500 osób organicznie.<br>
+                        <strong>Podcast sponsorowany:</strong> organiczny zasięg + 800-5000 osób zainteresowanych 
+                        dokładnie Twoją branżą (przez Google Ads).
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="number">6</div>
+                    <h3>Koszty firmowe</h3>
+                    <p>
+                        Podcast sponsorowany to pełnoprawny koszt firmowy: usługa marketingowa (faktura BTW), 
+                        zwiększasz koszty uzyskania przychodu, obniżasz podatek do zapłaty. 
+                        <strong>Inteligentna inwestycja w marketing z korzyścią podatkową!</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="emphasis-box">
+                <p>
+                    <strong>Większość firm kupuje laptopy, które nie potrzebują, lub subskrypcje, o których zapomną za miesiąc.</strong>
+                    <br><br>
+                    A co jeśli zamiast tego zainwestujesz w coś, co pracuje na Ciebie przez LATA? 
+                    Podcast sponsorowany to nie wydatek – to inwestycja w marketing, która się zwraca.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--dark-bg);">
+        <div class="container">
+            <h2 class="section-title">📦 Pakiety - Podcast Sponsorowany</h2>
+            <p class="section-subtitle">Wybierz pakiet dopasowany do Twoich potrzeb i budżetu</p>
+            
+            <div class="packages">
+                <!-- Pakiet Standard -->
+                <div class="package-card">
+                    <h3 class="package-name">Pakiet Standard</h3>
+                    <div class="package-price">500€ <span>netto</span></div>
+                    <ul class="package-features">
+                        <li><strong>60-90 minut rozmowy</strong> w profesjonalnym studio w Rotterdamie</li>
+                        <li><strong>Montaż, publikacja, promocja</strong> na Spotify, YouTube</li>
+                        <li><strong>50€ budżet Google Ads</strong> (test przez 2 tygodnie w cenie)</li>
+                        <li><strong>Zasięg: 500-1500 osób</strong> zainteresowanych Twoim tematem</li>
+                        <li><strong>Materiał, który buduje Twój autorytet</strong> i pracuje na Ciebie przez lata</li>
+                        <li><strong>Targetowany ruch</strong> - ludzie SZUKAJĄCY Twoich usług</li>
+                    </ul>
+                    <a href="mailto:info@oscarroart.com?subject=Zapytanie - Podcast Sponsorowany Standard" class="cta-button">Zamawiam pakiet Standard</a>
+                </div>
+
+                <!-- Pakiet Premium PLUS -->
+                <div class="package-card featured">
+                    <span class="package-badge">🔥 BESTSELLER</span>
+                    <h3 class="package-name">Pakiet Premium PLUS</h3>
+                    <div class="package-price">750€ <span>netto</span></div>
+                    <div class="original-price">zamiast 950€</div>
+                    <ul class="package-features">
+                        <li><strong>Wszystko z pakietu Standard</strong></li>
+                        <li style="margin-top: 15px; padding-top: 15px; border-top: 2px solid var(--primary-orange);"><strong>DODATKOWO:</strong></li>
+                        <li><strong>Wizytówka video</strong> nagrana w profesjonalnym studio w Rotterdamie</li>
+                        <li><strong>Multi-camera setup + teleprompter</strong></li>
+                        <li><strong>Profesjonalna prezentacja Twojej firmy</strong></li>
+                        <li><strong>Gotowy materiał</strong> przystosowany na stronę, social media, w mailach</li>
+                        <li><strong>Format: 60-90 sekund</strong> - idealny do promocji</li>
+                    </ul>
+                    <a href="mailto:info@oscarroart.com?subject=Zapytanie - Podcast Sponsorowany Premium PLUS" class="cta-button">Zamawiam pakiet PLUS</a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">🎬 Jak wygląda proces?</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Konsultacja i przygotowanie</h3>
+                        <p>
+                            Rozmawiamy o Twoich celach, grupie docelowej i kluczowych przekazach. 
+                            Wspólnie ustalamy tematy rozmowy i przygotowujemy scenariusz.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Nagranie w studio</h3>
+                        <p>
+                            Przyjeżdżasz do profesjonalnego studia w Rotterdamie. Nagrywamy rozmowę w komfortowych 
+                            warunkach (60-90 minut). Jeśli wybierasz pakiet PLUS, dodatkowo nagrywamy wizytówkę video.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Montaż i postprodukcja</h3>
+                        <p>
+                            Montuję materiał, dodaję intro/outro, poprawiam dźwięk. Przygotowuję miniaturki i grafiki promocyjne.
+                            Tworzę krótkie clipsy do social media (5-10 fragmentów po 60 sekund).
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Publikacja i promocja</h3>
+                        <p>
+                            Publikuję odcinek na YouTube, Spotify. Uruchamiam kampanię Google Ads 
+                            targetowaną na Twoją grupę docelową.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Dostajesz gotowe materiały</h3>
+                        <p>
+                            Otrzymujesz profesjonalnie zmontowane krótkie rolki (5-10 x 60 sek.) gotowe do publikacji 
+                            w Twoich social mediach. Pełny odcinek publikuję na moim kanale YouTube, gdzie będzie 
+                            dostępny dla tysięcy osób szukających informacji z Twojej branży.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--dark-bg);">
+        <div class="container">
+            <h2 class="section-title">❓ Najczęściej Zadawane Pytania</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Czy muszę mieć doświadczenie w wystąpieniach medialnych?</div>
+                <div class="faq-answer">
+                    Nie! Prowadzę rozmowę w sposób naturalny i swobodny. Jeśli coś pójdzie nie tak, po prostu 
+                    powtarzamy daną część. W montażu wszystko wygląda profesjonalnie i płynnie.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Ile czasu zajmuje cały proces od nagrania do publikacji?</div>
+                <div class="faq-answer">
+                    Zazwyczaj 7-14 dni. Nagranie trwa około 2 godzin (wliczając przygotowanie), 
+                    potem potrzebuję 4-7 dni na montaż i postprodukcję, a następnie 2-3 dni na przygotowanie promocji.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Czy mogę wykorzystać materiał w swojej komunikacji?</div>
+                <div class="faq-answer">
+                    Tak! Dostajesz gotowe rolki (5-10 krótkich klipów po 60 sekund), które możesz swobodnie 
+                    publikować na swoich kanałach social media (LinkedIn, Instagram, Facebook, TikTok). 
+                    Pełny odcinek pozostaje na moim kanale YouTube, gdzie dociera do szerszej publiczności.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Co jeśli prowadzę firmę poza Holandią/Belgią?</div>
+                <div class="faq-answer">
+                    Nie ma problemu! Choć nasza główna społeczność to Polacy w Holandii i Belgii, docieramy również 
+                    do słuchaczy w Polsce i innych krajach. Możemy dostosować promocję Google Ads do Twojego rynku docelowego.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Co jeśli chcę więcej niż jeden odcinek?</div>
+                <div class="faq-answer">
+                    Możemy stworzyć mini-serię odcinków! Przy zamówieniu 3+ odcinków oferuję rabat. 
+                    To świetne rozwiązanie, jeśli masz kilka obszarów działalności lub chcesz regularnie budować obecność.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3 style="color: var(--primary-orange); margin-bottom: 20px;">📧 Skontaktuj się z nami</h3>
+            <div class="contact-info">
+                <strong>Oskar Szpotański</strong><br>
+                <a href="https://www.oscarroart.com" target="_blank">www.oscarroart.com</a><br>
+                <a href="mailto:info@oscarroart.com">info@oscarroart.com</a><br>
+                <span style="color: var(--text-gray);">KVK 97228281</span>
+            </div>
+            <p style="color: var(--text-gray); margin-top: 30px;">
+                OSCARRO ART<br>
+                <em>Framing Life. Filming Stories.</em>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
